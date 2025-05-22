@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unified AI Email Assistant</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <header class="mb-4">
+            <h1>Unified AI Email Assistant</h1>
+            <div id="authStatus" class="d-flex justify-content-start align-items-center">
+                <span id="gmailAuthStatus" class="badge badge-secondary mr-2 p-2">Gmail: Checking...</span>
+                <button id="connectGmailBtn" class="btn btn-sm btn-danger mr-3">Connect Gmail</button>
+                <span id="outlookAuthStatus" class="badge badge-secondary mr-2 p-2">Outlook: Checking...</span>
+                </div>
+        </header>
+
+        <div id="statusMessagesGlobal" class="mb-3"></div>
+        <button id="refreshAllInboxBtn" class="btn btn-info mb-3">Refresh All Inboxes</button>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Combined Inbox</h2>
+                <ul class="list-group" id="emailList">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="draftModal" tabindex="-1" role="dialog" aria-labelledby="draftModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="draftModalLabel">Draft Reply</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalStatusMessages"></div>
+                    <h5>Original Email:</h5>
+                    <div class="original-email-view card mb-3">
+                        <div class="card-body">
+                            <p><strong>From:</strong> <span id="modalOriginalSender"></span></p>
+                            <p><strong>Subject:</strong> <span id="modalOriginalSubject"></span></p>
+                            <pre id="modalOriginalBody"></pre>
+                        </div>
+                    </div>
+                    
+                    <h5>Your Reply:</h5>
+                    <div class="form-group">
+                        <label for="modalReplyTo">To:</label>
+                        <input type="text" class="form-control" id="modalReplyTo">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalReplySubject">Subject:</label>
+                        <input type="text" class="form-control" id="modalReplySubject">
+                    </div>
+                    <div class="form-group">
+                        <label for="modalReplyBody">Body (AI Draft - Editable):</label>
+                        <textarea class="form-control" id="modalReplyBody" rows="10"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-info" id="regenerateDraftBtnModal">Regenerate Draft</button>
+                    <button type="button" class="btn btn-success" id="sendReplyBtnModal">Send Reply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

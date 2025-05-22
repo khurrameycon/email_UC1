@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SharePoint RAG Chat</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="chat_style.css">
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Knowledge Base</h4>
+                <button id="updateKbBtn" class="btn btn-primary btn-block mb-2">Update Knowledge Base</button>
+                <button id="connectMsGraphBtn" class="btn btn-info btn-block mb-3">Connect Microsoft (Graph)</button>
+                <div id="kbStatus" class="mb-2">KB Status: Unknown</div>
+                <div class="document-list-container">
+                    <h5>Indexed Documents:</h5>
+                    <ul id="indexedDocsList" class="list-group">
+                        <li class="list-group-item">Please update knowledge base.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="chat-header">
+                    <h3>Chat with SharePoint Documents (Ollama AI)</h3>
+                </div>
+                <div class="chat-window card">
+                    <div id="chatMessages" class="card-body">
+                        <div class="message ai-message">Welcome! Update the knowledge base then ask me anything about your SharePoint documents.</div>
+                    </div>
+                </div>
+                <div class="chat-input mt-2">
+                    <div class="input-group">
+                        <input type="text" id="userInput" class="form-control" placeholder="Ask a question about your documents...">
+                        <div class="input-group-append">
+                            <button id="sendBtn" class="btn btn-success">Send</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="chat_script.js"></script>
+</body>
+</html>

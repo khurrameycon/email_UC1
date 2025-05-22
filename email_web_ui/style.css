@@ -1,0 +1,23 @@
+body { font-family: sans-serif; background-color: #f8f9fa; }
+.container { max-width: 1000px; }
+.email-item { cursor: default; border-bottom: 1px solid #eee; padding: 10px 0; }
+.email-item:hover { background-color: #f1f1f1; }
+.email-snippet { color: #555; font-size: 0.9em; display: block; margin-top: 5px; }
+.platform-badge { font-size: 0.75em; padding: .25em .4em; margin-right: 8px; }
+.original-email-view pre {
+    background-color: #f7f7f7;
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    max-height: 250px;
+    overflow-y: auto;
+    white-space: pre-wrap; /* Handles line breaks */
+    word-wrap: break-word; /* Breaks long words */
+    font-size: 0.9em;
+}
+#modalReplyBody {
+    font-family: Arial, sans-serif; /* Or your preferred font for composing */
+    font-size: 1rem;
+}
+.modal-xl { max-width: 90%; }
+#authStatus .badge { cursor: default; }
+#authStatus button { font-size: 0.8rem; }
